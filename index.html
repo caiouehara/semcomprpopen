@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <!-- Definições básicas do documento -->
+    <meta charset="UTF-8"> <!-- Define a codificação de caracteres como UTF-8 para suportar caracteres especiais -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Define a viewport para garantir que a página seja redimensionada corretamente em dispositivos móveis -->
+    <title>SemComp</title> <!-- Título da página exibido na aba do navegador -->
+
+    <!-- Inclusão de folhas de estilo -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> <!-- Inclui o CSS do Bootstrap para estilização rápida e responsiva -->
+    <link rel="stylesheet" href="css/style.css"> <!-- Inclui o CSS personalizado específico do site -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=8bit+Operator&display=swap"> <!-- Fonte externa do Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pixel+Emulator&display=swap"> <!-- Outra fonte do Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com"> <!-- Estabelece uma conexão antecipada com o domínio de fontes do Google -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <!-- Estabelece uma conexão antecipada com o domínio de fontes do Google com atributos de segurança -->
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet"> <!-- Mais uma fonte do Google Fonts -->
+</head>
+<body>
+    <!-- Área de fundo com estrelas ou efeito visual -->
+    <div id="starfield"></div>
+
+    <!-- Barra de navegação fixa no topo -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <a class="navbar-brand" href="#">
+            <img src="img/logo.svg" alt="Logo" class="logo"> <!-- Logo da página -->
+        </a>
+        <button id="navbarToggler" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            ☰ <!-- Ícone de menu para dispositivos móveis -->
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <!-- Itens de navegação para telas pequenas -->
+            <ul class="navbar-nav d-lg-none">
+                <li class="nav-item"><a class="nav-link" href="#about-us-section">Sobre nós</a></li>
+                <li class="nav-item"><a class="nav-link" href="#container-table">Cronograma</a></li>
+                <li class="nav-item"><a class="nav-link" href="#form-secondary">Inscrição</a></li>
+                <li class="nav-item"><a class="nav-link" href="#container-patrocinadores">Patrocinadores</a></li>
+                <li class="nav-item"><a class="nav-link" href="#container-footer">Contato</a></li>
+            </ul>
+
+            <!-- Itens de navegação para telas grandes -->
+            <ul class="navbar-nav d-none d-lg-flex">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-nav" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Navegue
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#about-us-section">Sobre nós</a>
+                        <a class="dropdown-item" href="#container-table">Cronograma</a>
+                        <a class="dropdown-item" href="#form-section">inscrição</a>
+                        <a class="dropdown-item" href="#form-secondary">Formulário</a>
+                        <a class="dropdown-item" href="#container-patrocinadores">Patrocinadores</a>
+                        <a class="dropdown-item" href="#container-footer">Contatos</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Conteúdo principal da página -->
+    <main id="main-content">
+        <img src="img/img-asteroid.gif" alt="Asteroid" class="gif-principal"> <!-- Imagem animada de asteroide -->
+        <img src="img/img-asteroid.gif" alt="Asteroid" class="gif-principal" style="width: 25px; position: absolute; top: -400px; left: 180px; animation: move-diagonal 4s infinite; z-index: -50;"> <!-- Outra imagem de asteroide com animação e posicionamento absoluto -->
+        <img src="img/img-asteroid.gif" alt="Asteroid" class="gif-principal" style="width: 30px; position: absolute; top: -680px; left: 120px;"> <!-- Outra imagem de asteroide -->
+        <img src="img/img-planet-1.svg" alt="Planet" class="planet"> <!-- Imagem de um planeta -->
+        <img src="img/333.svg" alt="Galaxy" class="galaxy-1"> <!-- Imagem de uma galáxia -->
+        <img src="img/galaxy-purple.svg" class="galaxy-purple" alt=""> <!-- Outra imagem de galáxia -->
+        <div id="container-main">
+            <img src="img/SE CO(1).svg" alt="Title" id="img-title-principal"> <!-- Título principal -->
+            <p id="text-principal">embarque já nessa viagem pelo universo da computação!</p> <!-- Texto introdutório -->
+            <a id="scroll-button" href="#" class="image-link"> <img src="img/1.svg" alt="" srcset="" class="img-btn-scroll"></a> <!-- Botão para rolar a página -->
+        </div>
+    </main>
+
+    <!-- Seção Sobre Nós -->
+    <section id="about-us-section" >
+        <div class="content-about">
+        <h1>Sobre nós</h1> <!-- Título da seção -->
+        <p>A <span style="color: #ffc107; font-size: 1.4em;">semana</span> da <span style="color: #17a2b8; font-size: 1.4em;">Computação</span> é um evento gratuito
+           organizado por estudantes universitários para promover aprendizado e intercâmbio de ideias na área de
+           computação. Oferece uma série de atividades, incluindo palestras e workshops, com foco em tópicos
+           relevantes e acessíveis a todos. O evento visa expandir conhecimentos, estimular o interesse na área
+           e fomentar o desenvolvimento pessoal e profissional dos participantes. É uma <span style="color: #6f42c1; font-size: 1.4em;">oportunidade</span> para networking,
+           colaboração e fortalecimento da comunidade tecnológica.</p>
+        </div>
+           <!-- Imagens animadas de asteroides e meteoros -->
+        <div id="asteroids">
+            <img src="img/pixil-layer-Layer 1.png" alt="" class="asteroid-gif meteor-none" style="position: absolute; top: 20vh; animation: flutuar 4s ease-in-out infinite alternate;"> <!-- Asteroide flutuante -->
+            <img src="img/pixil-layer-Layer 1.png" alt="" class="asteroid-gif meteor-none" style="position: absolute; top: 5vh; left: 25vw; animation: flutuar 1.5s ease-in-out infinite alternate;"> <!-- Outro asteroide flutuante -->
+            <img src="img/pixil-layer-Layer 1.png" alt="" class="asteroid-gif meteor-none" style="position: absolute; top: 15vh; left: 10vw;"> <!-- Asteroide fixo -->
+            <img src="img/pixil-layer-Layer 1.png" alt="" class="asteroid-gif meteor-none" style="position: absolute; top: 30vh; left: 5vw; animation: flutuar 2s ease-in-out infinite alternate;"> <!-- Outro asteroide flutuante -->
+            <img src="img/meteoro.gif" class="meteoro-gif meteor-none" style="position: absolute; top: 55vh; animation: flutuar 2s ease-in-out infinite alternate;"> <!-- Meteorito flutuante -->
+            <img src="img/meteoro.gif" class="meteoro-gif meteor-none"> <!-- Outro meteorito -->
+        </div>
+        <!-- Imagem decorativa -->
+        <img src="img/Semana da Computação A Semana da Computação é um evento gratuito organizado por estudantes universitários para promover aprendizado e intercâmbio de ideias na área de computação. Oferece uma série.svg" class="galaxy-2" srcset="">
+    </section>
+
+    <!-- Seção do cronograma de eventos -->
+    <section id="container-table">
+        <div class="table-box">
+            <div class="sidebar">
+                <table>
+                    <tbody>
+                        <tr data-day="monday"><td>30/09</td></tr> <!-- Linha para Segunda-feira -->
+                        <tr data-day="tuesday"><td>01/10</td></tr> <!-- Linha para Terça-feira -->
+                        <tr data-day="wednesday"><td>02/10</td></tr> <!-- Linha para Quarta-feira -->
+                        <tr data-day="thursday"><td>03/10</td></tr> <!-- Linha para Quinta-feira -->
+                        <tr data-day="friday"><td>04/10</td></tr> <!-- Linha para Sexta-feira -->
+                    </tbody>
+                </table>
+            </div>
+            <div class="content">
+                <h1>cronograma de eventos</h1> <!-- Título do cronograma -->
+                <div id="events">
+                    <p>Selecione um dia da semana para ver os eventos.</p> <!-- Mensagem para seleção de eventos -->
+                </div>
+                <div id="event-details">
+                    <!-- Detalhes dos eventos serão exibidos aqui -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção do formulário de inscrição -->
+    <section id="form-section">
+      <img src="img/img-planet-2.svg" class="planet-blue" alt="" srcset="">  <!--planeta menor -->  
+        <img src="img/Earth.png" class="planet-earth" alt="" srcset=""> <!--planeta maior-->
+        
+        <!-- Imagem decorativa -->
+        <img src="img/Design sem nome(2).svg" class="img-2" srcset="">
+        <a href="#form-secondary" class="btn-form-sec"> <img src="img/1.svg" alt="" srcset="" class="img-btn-scroll-form"></a> <!-- Botão para rolar a página -->
+
+    </section>
+    <section id="form-secondary">
+            <form action="php/inscricao.php" method="POST"> <!-- Formulário que envia dados para inscrição -->
+                <div id="box-one-form">
+                    <h1>Dados para contato</h1> <!-- Título do formulário -->
+                <div class="input-group">
+                    <label for="name">Nome:</label> <!-- Rótulo para o campo de nome -->
+                    <input type="text" id="name" name="nome" required> <!-- Campo de entrada para nome, obrigatório -->
+                </div>
+                <div class="input-group">
+                    <label for="email">E-mail:</label> <!-- Rótulo para o campo de e-mail -->
+                    <input type="email" id="email" name="email" required> <!-- Campo de entrada para e-mail, obrigatório -->
+                </div>
+                <div class="input-group">
+                    <label for="phone">Telefone:</label> <!-- Rótulo para o campo de telefone -->
+                    <input type="text" id="phone" name="telefone" required> <!-- Campo de entrada para telefone, obrigatório -->
+                </div>
+            </div>
+            <div id="box-two-form">
+            <h1>Eventos exclusivos</h1> <!-- Título do formulário -->
+                    <div class="input-group">
+                        <label for="evento1">feira de projetos</label>
+                        <input type="checkbox" id="evento1" name="eventos[]" value="Feira de projetos">
+
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="evento2">Passa ou repassa</label>
+                        <input type="checkbox" id="evento2" name="eventos[]" value="Passa ou repassa">
+
+                    </div>
+                    <div class="input-group">
+                        <label for="evento3">workshops</label>
+                        <input type="checkbox" id="evento3" name="eventos[]" value="Workshops">
+                    </div>
+                    
+                </div>
+                <button type="submit">Inscrever-se</button> <!-- Botão para enviar o formulário -->
+            </form>
+        </div>
+    </section>
+
+   <!-- <section id="section-form-secondary">
+        <span>Participe exclusivamente dos eventos a seguir:</span>
+        <div id="box-content-item-form">
+            <div data-description="A Feira de Projetos é um evento onde os participantes apresentam seus projetos e ideias.">Feira de projetos</div>
+            <div data-description="Passa ou Repassa é um jogo de perguntas e respostas onde a equipe decide se passa a pergunta ou tenta responder.">Passa ou Repassa</div>
+            <div data-description="Os workshops são sessões práticas onde os participantes aprendem novas habilidades ou aperfeiçoam as existentes.">Workshops</div>
+        </div>
+        <div id="description"></div>
+        <div id="box-btn-form">
+            <button>inscreva-se já</button>
+        </div>
+    </section> -->
+<!-- Seção de patrocinadores -->
+<section id="container-patrocinadores">
+    <!-- Logo de patrocinadores com a classe "min" para estilização -->
+    <img src="logo-patrocinadores/alura-light.svg" class="logoD min" alt="" srcset="">
+    <img src="logo-patrocinadores/horizontal_fundo_escuro.svg" class="logoA min" alt="" srcset="">
+    <img src="logo-patrocinadores/logocompletaopus.svg" class="logoB min" alt="" srcset="">
+    <img src="logo-patrocinadores/Logotipo.GrupoBoticario.CMYK.Preferencial.Policromatico.Horizontal.Negativo.png" class="logoE min" alt="" srcset="">
+    <img src="logo-patrocinadores/SmarAPD (1).png" class="logoC min" alt="" srcset="">
+</section>
+
+<!-- Seção do rodapé -->
+<footer id="container-footer">
+    <!-- Contato do rodapé -->
+    <div class="footer-contact">
+        <!-- Informações de contato -->
+        <p>Endereço: Rua Exemplo, 123, Cidade, Estado, País</p>
+        <p>Telefone: (11) 1234-5678</p>
+        <p>Email: contato@exemplo.com</p>
+    </div>
+
+    <!-- Redes sociais no rodapé -->
+    <div class="footer-social">
+        <!-- Link para Facebook -->
+        <a href="https://facebook.com/exemplo" target="_blank">
+            <img src="icon/1.svg" class="icon-img" alt="Facebook">
+        </a>
+        <!-- Link para ( Whatsapp) -->
+        <a href="https://twitter.com/exemplo" target="_blank">
+            <img src="icon/3.svg" class="icon-img" alt="Twitter">
+        </a>
+        <!-- Link para Instagram -->
+        <a href="https://instagram.com/exemplo" target="_blank">
+            <img src="icon/2.svg" class="icon-img" alt="Instagram">
+        </a>
+    </div>
+
+    <!-- Direitos autorais no rodapé -->
+    <div class="footer-copyright">
+        <p>&copy; 2024 SemComp. Todos os direitos reservados.</p>
+    </div>
+</footer>
+
+<!-- Botão para rolar para o topo da página -->
+<img src="img/up.svg" id="scrollToTopBtn" class="up-btn" alt="" srcset="" onclick="scrollToTop()">
+
+
+
+    <!-- Inclusão de scripts JavaScript -->
+ 
+   
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script> 
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="js/script.js"></script> 
+    <script src="js/scroll-button.js"></script>
+    <script src="js/scrollToTopBtn.js"></script>
+    <script src="js/table.js"></script> 
+    <script src="js/btn-nav-menu.js"></script>
+    <script src="js/btn-form-secondary.js"></script>
+
+</body>
+</html>

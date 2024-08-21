@@ -1,0 +1,880 @@
+/* Reset básico */
+* {
+    margin: 0; /* Remove a margem padrão de todos os elementos */
+    padding: 0; /* Remove o preenchimento padrão de todos os elementos */
+    box-sizing: border-box; /* Inclui padding e border no cálculo da largura e altura dos elementos */
+}
+html {
+    scroll-behavior: smooth; /*rolagem suave para section*/
+}
+
+/* Fonte personalizada */
+.pixelify-sans-text {
+    font-family: "Pixelify Sans", sans-serif; /* Define a fonte 'Pixelify Sans' como padrão para este texto */
+    font-optical-sizing: auto; /* Ajusta automaticamente o tamanho da fonte para melhorar a legibilidade */
+    font-weight: 400; /* Define a espessura da fonte como normal */
+    font-style: normal; /* Define o estilo da fonte como normal (não itálico) */
+}
+
+/* Cores */
+:root {
+    /* Definição de variáveis de cores para reutilização */
+    --blue: #007bff;
+    --indigo: #6610f2;
+    --purple: #6f42c1;
+    --pink: #e83e8c;
+    --red: #dc3545;
+    --orange: #fd7e14;
+    --yellow: #ffc107;
+    --green: #28a745;
+    --teal: #20c997;
+    --cyan: #17a2b8;
+    --white: #fff;
+    --gray: #6c757d;
+    --gray-dark: #343a40;
+    --primary: #007bff;
+    --secondary: #6c757d;
+    --success: #28a745;
+    --info: #17a2b8;
+    --warning: #ffc107;
+    --danger: #dc3545;
+    --light: #f8f9fa;
+    --dark: #343a40;
+}
+
+body {
+    overflow-x: hidden; /* Oculta o conteúdo que transborda horizontalmente */
+    background: rgb(0,0,0); /* Cor de fundo padrão em RGB */
+    background: linear-gradient(0deg, rgba(0,0,0,1) 37%, rgba(1,1,55,1) 90%, rgba(30,5,52,1) 100%) no-repeat; /* Gradiente de fundo que vai do preto ao azul-escuro */
+    font-family: "Pixelify Sans", sans-serif; /* Define a fonte padrão para o corpo */
+    
+}
+
+/* Logo */
+.logo {
+    width: 5vw; /* Define a largura da logo como 5% da largura da viewport */
+    margin: 5px 0 0 0; /* Margem superior de 5px, sem margem em outros lados */
+}
+
+/* Navbar */
+.navbar {
+    background: transparent; /* Remove o fundo padrão da navbar */
+}
+.navbar-toggler {
+    position: relative;
+    right: auto;
+    margin: 0; 
+}
+.navbar-nav .nav-item .nav-link {
+    font-weight: 900; /* Define o peso da fonte como negrito */
+    text-transform: uppercase; /* Transforma o texto em maiúsculas */
+    font-size: 0.9em; /* Define o tamanho da fonte como 90% do tamanho do elemento pai */
+    padding: 5px; /* Define o preenchimento interno das ligações */
+}
+
+.navbar-nav .nav-item .nav-link:hover {
+    color: blueviolet; /* Muda a cor do texto ao passar o mouse */
+    box-shadow: 0 3px 10px 0 blueviolet; /* Adiciona uma sombra ao redor do texto ao passar o mouse */
+    text-shadow: 0px 0px 5px blueviolet; /* Adiciona um efeito de sombra ao texto ao passar o mouse */
+}
+
+.navbar-toggler {
+    width: 50px; /* Define a largura do botão de alternância da navbar */
+    border: none;
+    outline: none;
+}
+
+
+
+/* Dropdown Menu */
+.dropdown-menu {
+    background-color: rgb(255, 255, 255); /* Define a cor de fundo do menu suspenso como branco */
+}
+
+.dropdown-item {
+    border: 1px solid #c0c0c0; /* Adiciona uma borda cinza clara aos itens do menu suspenso */
+    font-size: 1em; /* Define o tamanho da fonte dos itens do menu */
+}
+
+.dropdown-menu .dropdown-item:hover {
+    box-shadow: 0 3px 10px 0 blueviolet; /* Adiciona uma sombra ao redor do item do menu ao passar o mouse */
+    text-shadow: 0px 0px 5px blueviolet; /* Adiciona um efeito de sombra ao texto do item do menu ao passar o mouse */
+}
+
+/* Main */
+#main-content {
+    width: 100%; /* Define a largura do conteúdo principal como 100% da largura da viewport */
+    height: 100vh; /* Define a altura do conteúdo principal como 700px */
+    display: flex; /* Usa flexbox para o layout */
+    position: relative; /* Define a posição relativa para posicionamento absoluto dos elementos filhos */
+    justify-content: center; /* Centraliza horizontalmente o conteúdo */
+    align-items: center; /* Centraliza verticalmente o conteúdo */
+}
+
+.gif-principal {
+    width: 50px; /* Define a largura das imagens GIF principais como 50px */
+    position: absolute; /* Posiciona o GIF de forma absoluta */
+    top: -200px; /* Define a posição do GIF a 200px acima do topo do elemento pai */
+    left: -30px; /* Define a posição do GIF a 30px à esquerda do elemento pai */
+    z-index: -200; /* Define a prioridade de empilhamento do GIF */
+    animation: move-diagonal 8s infinite linear; /* Aplica uma animação que move o GIF em diagonal */
+}
+
+.asteroid-gif {
+    width: 100px; /* Define a largura dos GIFs de asteroide como 100px */
+}
+
+#asteroids {
+    width: 100%; /* Define a largura da seção de asteroides como 100% da largura da viewport */
+    height: auto; /* Define a altura automaticamente com base no conteúdo */
+    position: relative; /* Define a posição relativa para os elementos filhos */
+    animation: flutuar 3s ease-in-out infinite alternate; /* Aplica uma animação de flutuação */
+}
+
+/* Animações */
+@keyframes move-diagonal {
+    0% {
+        transform: translate(0, 0); /* Inicia a animação sem transformação */
+    }
+    100% {
+        transform: translate(1400px, 1400px); /* Move o elemento diagonalmente até 1400px no eixo X e Y */
+    }
+}
+
+@keyframes flutuar {
+    0% {
+        transform: translateY(0); /* Inicia a animação sem transformação vertical */
+    }
+    100% {
+        transform: translateY(-1vw); /* Move o elemento para cima em 1% da largura da viewport */
+    }
+}
+
+/* Outras imagens e animações */
+.galaxy-1 {
+    width: 100vw; /* Define a largura da imagem da galáxia como 100% da largura da viewport */
+    position: absolute; /* Posiciona a imagem da galáxia de forma absoluta */
+    top: -40vh; /* Define a posição da galáxia 40% acima da altura da viewport */
+    left: 40vw; /* Define a posição da galáxia 40% à direita da largura da viewport */
+    z-index: -100; /* Define a prioridade de empilhamento da imagem da galáxia */
+}
+
+.galaxy-purple {
+    width: 50vw; /* Define a largura da galáxia roxa como 50% da largura da viewport */
+    position: absolute; /* Posiciona a galáxia roxa de forma absoluta */
+    left: -18vw; /* Define a posição da galáxia roxa 18% à esquerda da largura da viewport */
+    top: 20vh; /* Define a posição da galáxia roxa 20% abaixo da altura da viewport */
+    opacity: 0.7; /* Define a opacidade da galáxia roxa */
+}
+
+.galaxy-2 {
+    position: absolute; /* Posiciona a imagem da galáxia de forma absoluta */
+    top: 20vh; /* Define a posição da galáxia 20% abaixo da altura da viewport */
+    left: 10vw; /* Define a posição da galáxia 10% à direita da largura da viewport */
+    z-index: -1; /* Define a prioridade de empilhamento da imagem da galáxia */
+}
+
+.planet {
+    width: 5vw; /* Define a largura do planeta como 5% da largura da viewport */
+    position: absolute; /* Posiciona o planeta de forma absoluta */
+    top: 20vh; /* Define a posição do planeta 20% abaixo da altura da viewport */
+    left: 25vw; /* Define a posição do planeta 28% à direita da largura da viewport */
+    animation: flutuar 6s ease-in-out infinite alternate; /* Aplica uma animação de flutuação */
+}
+
+.meteor {
+    width: 50vw; /* Define a largura do meteorito como 50% da largura da viewport */
+    position: absolute; /* Posiciona o meteorito de forma absoluta */
+    top: 20vh; /* Define a posição do meteorito 20% abaixo da altura da viewport */
+}
+
+.meteor-2 {
+    width: 70vw; /* Define a largura do segundo meteorito como 70% da largura da viewport */
+    animation: flutuar 3s ease-in-out infinite alternate; /* Aplica uma animação de flutuação */
+    position: absolute; /* Posiciona o meteorito de forma absoluta */
+    top: 50vh; /* Define a posição do meteorito 50% abaixo da altura da viewport */
+    left: 50vw; /* Define a posição do meteorito 50% à direita da largura da viewport */
+}
+
+#container-main {
+    width: 100vw; /* Define a largura do contêiner principal como 100% da largura da viewport */
+    height: 50%; /* Define a altura do contêiner principal como 50% da altura da viewport */
+    display: flex; /* Usa flexbox para o layout */
+    flex-direction: column; /* Alinha os elementos filhos em coluna */
+    justify-content: center; /* Centraliza horizontalmente o conteúdo */
+    align-items: center; /* Centraliza verticalmente o conteúdo */
+    position: relative; /* Define a posição relativa para os elementos filhos */
+    bottom: 15vh; /* Define a posição do contêiner 15% acima da parte inferior da viewport */
+}
+
+#img-title-principal {
+    width: 110vw; /* Define a largura da imagem do título como 110% da largura da viewport */
+}
+
+/* Estilo para o botão de rolar */
+#scroll-button {
+    text-decoration: none; /* Remove o sublinhado padrão do link */
+    width: 100px; /* Define a largura do botão de rolar */
+    height: 100px; /* Define a altura do botão de rolar */
+    position: absolute; /* Posiciona o botão de forma absoluta */
+    top: 70vh; /* Define a posição do botão 70% abaixo da altura da viewport */
+    line-height: 7.5; /* Define a altura da linha para o texto dentro do botão */
+    font-size: 1.4em; /* Define o tamanho da fonte do texto dentro do botão */
+    animation: flutuar 1s ease-in-out infinite alternate; /* Aplica uma animação de flutuação */
+}
+
+#text-principal {
+    color: var(--light); /* Define a cor do texto principal como a cor clara definida nas variáveis */
+    font-size: 1.5em; /* Define o tamanho da fonte do texto principal */
+    position: absolute; /* Posiciona o texto de forma absoluta */
+    top: 50vh; /* Define a posição do texto 50% abaixo da altura da viewport */
+    width: 60%; /* Define a largura do texto principal como 60% da largura da viewport */
+    text-align: center; /* Centraliza o texto horizontalmente */
+}
+
+/* Estilo básico para o link com imagem de fundo */
+.image-link {
+    background-size: cover; /* Faz com que a imagem cubra todo o fundo do link */
+    background-position: center; /* Centraliza a imagem de fundo */
+}
+.img-btn-scroll {
+    width: 100px;
+    position: absolute;
+
+}
+
+/* seção de conteúdo sobre nós*/
+
+#about-us-section {
+    width: 100%; /* Define a largura da seção sobre nós como 100% da largura da viewport */
+    height: 100vh; /* Define a altura da seção sobre nós como 700px */
+    background: #0c073215; /* Define a cor de fundo da seção como um tom escuro e semi-transparente */
+    position: relative; /* Define a posição relativa para os elementos filhos */
+    display: flex; /* Usa flexbox para o layout */
+    flex-direction: column; /* Alinha os elementos filhos em coluna */
+    align-items: center; /* Centraliza horizontalmente o conteúdo */
+}
+
+#about-us-text {
+    width: 70vw; /* Define a largura do texto sobre nós como 70% da largura da viewport */
+    position: absolute; /* Posiciona o texto de forma absoluta */
+    top: 10vh; /* Define a posição do texto 10% abaixo da altura da viewport */
+    left: 20vw; /* Define a posição do texto 20% à direita da largura da viewport */
+}
+
+#about-us-section p {
+    width: 70%; /* Define a largura do parágrafo como 70% do contêiner pai */
+    color: white; /* Define a cor do texto como branco */
+    font-size: 1.5em; /* Define o tamanho da fonte do parágrafo */
+    line-height: 40px; /* Define a altura da linha do parágrafo */
+    text-align:justify; /* Centraliza o texto horizontalmente */
+    position: absolute; /* Posiciona o parágrafo de forma absoluta */
+    top: 30vh; /* Define a posição do parágrafo 30% abaixo da altura da viewport */
+}
+.content-about {
+    width: 100%;  /*Define caixa com 100 por cento de largura*/
+    display: flex; /*A caixa fica flexivel */
+    justify-content: center; /*justifica elementos dentro da caixa*/
+
+}
+#about-us-section h1 {
+    text-transform: uppercase; /* Transforma o texto em maiúsculas */
+    font-size: 4em; /* Define o tamanho da fonte do título como 4 vezes o tamanho da fonte padrão */
+    font-weight: 400; /* Define o peso da fonte como normal */
+    position: absolute; /* Posiciona o título de forma absoluta */
+    top: 15vh; /* Define a posição do título 15% abaixo da altura da viewport */
+    color: var(--light); /* Define a cor do título como a cor clara definida nas variáveis */
+}
+
+
+.seta {
+    margin: 20px; /* Define a margem ao redor da seta */
+}
+
+/* Estrela */
+.star {
+    position: absolute; /* Posiciona a estrela de forma absoluta */
+    width: 3px; /* Define a largura da estrela */
+    height: 3px; /* Define a altura da estrela */
+    background-color: #fff; /* Define a cor de fundo da estrela como branco */
+    pointer-events: none; /* Desativa eventos de ponteiro na estrela */
+    opacity: 0; /* Define a opacidade da estrela como invisível */
+}
+
+/* Área de tabela e cronograma de eventos*/
+#container-table {
+    width: 100vw; /* Define a largura do contêiner da tabela como 100% da largura da viewport */
+    display: flex; /* Usa flexbox para o layout do contêiner da tabela */
+    height: 100vh; /* Define a altura do contêiner da tabela como 600px */
+    justify-content: center; /* Centraliza horizontalmente o conteúdo */
+    align-items: center; /* Centraliza verticalmente o conteúdo */
+}
+
+.table-box {
+    width: 80%; /* Define a largura da caixa da tabela como 80% da largura do contêiner pai */
+    display: flex; /* Usa flexbox para o layout da caixa da tabela */
+}
+
+.sidebar {
+    width: 20%; /* Define a largura da barra lateral como 20% da largura do contêiner pai */
+    background-color: var(--cyan); /* Define a cor de fundo da barra lateral como a cor ciano definida nas variáveis */
+    color: #ecf0f1; /* Define a cor do texto da barra lateral como um tom claro */
+    padding: 20px; /* Adiciona preenchimento interno à barra lateral */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra ao redor da barra lateral */
+    overflow-y: auto; /* Permite rolar verticalmente o conteúdo da barra lateral */
+    display: flex; /* Usa flexbox para o layout da barra lateral */
+    justify-content: center; /* Centraliza horizontalmente o conteúdo da barra lateral */
+    align-items: center; /* Centraliza verticalmente o conteúdo da barra lateral */
+    font-size: 1.3em; /* Define o tamanho da fonte da barra lateral */
+    filter: drop-shadow(1px 1px 10px var(--indigo));
+}
+
+.sidebar table {
+    width: 100%; /* Define a largura da tabela na barra lateral como 100% da largura da barra lateral */
+    border-collapse: collapse; /* Remove o espaço entre as bordas das células da tabela */
+}
+
+.sidebar th, .sidebar td {
+    padding: 10px; /* Adiciona preenchimento interno às células da tabela */
+    text-align: center; /* Alinha o texto das células da tabela no centro */
+    cursor: pointer; /* Define o cursor como ponteiro quando o mouse passa sobre as células */
+}
+
+.sidebar tr {
+    border-bottom: 1px solid #34495e; /* Adiciona uma borda inferior às linhas da tabela */
+}
+
+.sidebar tr:hover {
+    background-color: var(--indigo); /* Altera a cor de fundo da linha da tabela quando o mouse passa sobre ela */
+}
+
+.content {
+    flex: 1; /* Permite que o conteúdo ocupe o espaço restante disponível */
+    padding: 20px; /* Adiciona preenchimento interno ao conteúdo */
+}
+
+.content h1 {
+    text-transform: uppercase; /* Transforma o texto em maiúsculas */
+    color: var(--light); /* Define a cor do texto como a cor roxa definida nas variáveis */
+}
+
+#events {
+    border: 1px solid #ccc; /* Adiciona uma borda cinza clara ao redor da seção de eventos */
+    padding: 20px; /* Adiciona preenchimento interno à seção de eventos */
+    border-radius: 5px; /* Adiciona bordas arredondadas à seção de eventos */
+    margin-bottom: 20px; /* Adiciona uma margem inferior à seção de eventos */
+    color: var(--light);
+    font-size: 1.2em;
+}
+
+#event-details {
+    border: 1px solid #ccc; /* Adiciona uma borda cinza clara ao redor dos detalhes do evento */
+    padding: 20px; /* Adiciona preenchimento interno aos detalhes do evento */
+    border-radius: 5px; /* Adiciona bordas arredondadas aos detalhes do evento */
+    display: none; /* Oculta os detalhes do evento por padrão */
+    color: var(--light);
+    font-size: 1.2em;
+}
+
+.event-item {
+    width: 100%; /* Define a largura do item de evento como 100% da largura do contêiner pai */
+    color: var(--indigo); /* Define a cor do texto do item de evento como a cor ciano definida nas variáveis */
+    cursor: pointer; /* Define o cursor como ponteiro quando o mouse passa sobre o item de evento */
+    padding: 10px; /* Adiciona preenchimento interno ao item de evento */
+    font-size: 1.2em;
+}
+
+.event-item:hover {
+    background-color: var(--cyan); /* Altera a cor de fundo do item de evento quando o mouse passa sobre ele */
+    font-size: 1.4em;   /*define tamanho da fonte*/
+    color: var(--light);    /*define cor após hover*/
+}
+
+.event-item.active {
+    font-weight: bold; /* Define a fonte do item de evento ativo como negrito */
+}
+
+.event-item.active:hover {
+    background-color: #e0e0e0; /* Altera a cor de fundo do item de evento ativo quando o mouse passa sobre ele */
+
+}
+
+
+/* Seção do formulário */
+#form-section {
+    width: 100vw; /* Define a largura da seção do formulário como 100% da largura da viewport */
+    height: 100vh; /* Define a altura da seção do formulário como 700px */
+    display: block; /* Define o layout como bloco */
+    flex-direction: row; /* Alinha os elementos filhos em linha */
+    justify-content: center; /* Centraliza horizontalmente o conteúdo */
+    align-items: center; /* Centraliza verticalmente o conteúdo */
+    position: relative; /* Define a posição relativa para os elementos filhos */
+    background: #0c073215; /* Define a cor de fundo como um tom escuro e semi-transparente */
+}
+
+.img-2 {
+    width: 50%; /* Define a largura da imagem decorativa como 45% da largura da viewport */
+    position: absolute; /* Posiciona a imagem de forma absoluta */
+    left: 45vw; /* Define a posição da imagem 45% à direita da largura da viewport */
+    top: 5vh; /* Define a posição da imagem 10% acima da parte inferior da viewport */
+}
+#form-secondary {
+    width: 100vw; /* Define a largura do elemento como 100% da largura da viewport (tela). */
+    height: 100vh; /* Define a altura do elemento como 700 pixels. */
+    position: relative; /* Define o posicionamento do elemento como relativo, o que significa que seus filhos podem ser posicionados absolutamente em relação a ele. */
+}
+
+#form-secondary form {
+    padding: 20px; /* Adiciona 20 pixels de preenchimento interno ao redor do conteúdo do formulário. */
+    width: 90%; /* Define a largura do formulário como 90% da largura do elemento pai (#form-secondary). */
+    height: 80vh; /* Define a altura do formulário como 600 pixels. */
+    border-radius: 8px; /* Adiciona bordas arredondadas ao formulário com um raio de 8 pixels. */
+    z-index: 1; /* Define a prioridade de empilhamento do formulário. Um valor maior significa que o formulário será sobreposto sobre outros elementos com valores menores. */
+    position: absolute; /* Posiciona o formulário de forma absoluta em relação ao seu elemento pai (#form-secondary). */
+    top: 15vh; /* Define a posição do topo do formulário como 5% da altura da viewport. */
+    left: 5vw; /* Define a posição da esquerda do formulário como 5% da largura da viewport. */
+    display: flex; /* Define o layout do formulário como flexível. Isso permite que os itens dentro do formulário se ajustem de acordo com as propriedades do flexbox. */
+    flex-direction: row; /* Define a direção dos itens flexíveis dentro do formulário como uma linha horizontal. */
+    justify-content: space-around; /* Distribui o espaço restante ao redor dos itens flexíveis, garantindo que haja um espaço igual ao redor de cada item. */
+    align-items: center; /* Alinha os itens flexíveis verticalmente no centro do formulário. */
+    flex-wrap: wrap; /* Permite que os itens flexíveis se movam para a linha seguinte se não houver espaço suficiente na linha atual. */
+    filter: drop-shadow(2px 2px 10px var(--indigo)); /* Aplica uma sombra projetada ao formulário com deslocamento de 2 pixels para a direita e para baixo, e um desfoque de 10 pixels, usando a cor definida na variável CSS var(--indigo). */
+    box-shadow: 1px 1px 50px var(--cyan); /* Adiciona uma sombra ao redor do formulário com deslocamento de 1 pixel para a direita e para baixo, e um desfoque de 50 pixels, usando a cor definida na variável CSS var(--cyan). */
+}
+
+
+.btn-form-sec {
+    position: absolute; /* Posiciona o botão de forma absoluta em relação ao seu elemento pai (#form-secondary). */
+    top: 75vh; /* Define a posição do topo do botão como 75% da altura da viewport. */
+    left: 15vw; /* Define a posição da esquerda do botão como 15% da largura da viewport. */
+    animation: flutuar 1s ease-in-out infinite alternate; /* Aplica uma animação chamada 'flutuar' ao botão. A animação dura 1 segundo, usa uma função de tempo 'ease-in-out', repete infinitamente e alterna a direção. */
+}
+
+.img-btn-scroll-form {
+    width: 140px; /* Define a largura da imagem do botão como 140 pixels. */
+}
+
+#box-one-form {
+    width: 45%; /* Define a largura do elemento como 45% da largura do elemento pai (#form-secondary). */
+}
+
+#box-two-form {
+    width: 45%; /* Define a largura do elemento como 45% da largura do elemento pai (#form-secondary). */
+    display: flex; /* Define o layout do elemento como flexível. */
+    flex-direction: column; /* Define a direção dos itens flexíveis dentro do elemento como uma coluna vertical. */
+    text-align: center; /* Alinha o texto dentro do elemento ao centro. */
+}
+
+#box-two-form .input-group {
+    font-size: 1.4em; /* Define o tamanho da fonte dos itens dentro do grupo de entrada como 1.4 vezes o tamanho da fonte padrão. */
+    display: flex; /* Define o layout do grupo de entrada como flexível. */
+    flex-direction: column; /* Define a direção dos itens flexíveis dentro do grupo de entrada como uma coluna vertical. */
+}
+
+#form-secondary h1 {
+    font-size: 2.4em; /* Define o tamanho da fonte do título do formulário */
+    color: #f8f8f8; /* Define a cor da fonte do título do formulário como um tom claro */
+    text-align: center; /* Centraliza o texto do título do formulário */
+    margin-bottom: 20px; /* Adiciona uma margem inferior ao título do formulário */
+    letter-spacing: 2px; /* Adiciona espaçamento entre letras no título do formulário */
+}
+
+.input-group {
+    margin-bottom: 15px; /* Adiciona uma margem inferior aos grupos de entrada */
+}
+
+label {
+    display: block; /* Exibe o rótulo como bloco */
+    color: #f8f8f8; /* Define a cor do texto do rótulo como um tom claro */
+    margin-bottom: 5px; /* Adiciona uma margem inferior ao rótulo */
+    font-size: 1em; /* Define o tamanho da fonte do rótulo */
+    letter-spacing: 1px; /* Adiciona espaçamento entre letras no rótulo */
+}
+
+input {
+    width: 100%; /* Define a largura do campo de entrada como 100% do contêiner pai */
+    padding: 10px; /* Adiciona preenchimento interno ao campo de entrada */
+    border: 2px solid #888; /* Adiciona uma borda cinza clara ao campo de entrada */
+    background-color: #222; /* Define a cor de fundo do campo de entrada como um tom escuro */
+    color: #fff; /* Define a cor do texto do campo de entrada como branco */
+    font-family: "Pixelify Sans", sans-serif;
+    border-radius: 4px; /* Adiciona bordas arredondadas ao campo de entrada */
+    box-sizing: border-box; /* Inclui o preenchimento e a borda no cálculo da largura total do campo */
+    font-size: 1em; /* Define o tamanho da fonte do campo de entrada */
+    box-shadow: inset 0 0 0 2px #000; /* Adiciona uma sombra interna ao campo de entrada */
+}
+
+input:focus {
+    border-color: var(--indigo); /* Altera a cor da borda do campo de entrada quando ele está em foco */
+    outline: none; /* Remove o contorno padrão quando o campo de entrada está em foco */
+}
+
+button {
+    background-color: var(--cyan); /* Define a cor de fundo do botão como laranja */
+    color: var(--light); /* Define a cor do texto do botão como preto */
+    padding: 10px; /* Adiciona preenchimento interno ao botão */
+    width: 200px; /* Define a largura do botão como 70% do contêiner pai */
+    height: 80px; /* Define a altura do botão */
+    cursor: pointer; /* Define o cursor como ponteiro quando o mouse passa sobre o botão */
+    font-family: "Pixelify Sans", sans-serif; /* Define o tamanho da fonte do botão */
+    border-radius: 4px; /* Adiciona bordas arredondadas ao botão */
+    margin-left: 45px; /* Adiciona uma margem à esquerda do botão */
+    font-size: 1.4em;
+    text-transform: uppercase;
+}
+
+button:hover {
+    background-color: var(--indigo); /* Altera a cor de fundo do botão quando o mouse passa sobre ele */
+}
+.planet-earth {
+    width: 50vw; /*largura para planeta*/
+    position: absolute; /*posição absoluta referente ao elemento pai*/
+    top: -20vh; /*distanciamento do top elemento pai*/
+    left: 5vw; /*distanciamento esquerda elemento pai*/
+    animation: flutuar 6s ease-in-out infinite alternate; /* Aplica uma animação de flutuação */
+
+}
+.planet-blue {
+    width: 7vw;
+    position: absolute;/*posição absoluta referente ao elemento pai*/
+    left: 5vw; /*distanciamento esquerda elemento pai*/
+    animation: flutuar 6s ease-in-out infinite alternate; /* Aplica uma animação de flutuação */
+
+}
+ /* Seção de formulário secundário para inscrição exclusiva*/
+/*
+#section-form-secondary {
+    width: 100vw;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#section-form-secondary span {
+    font-size: 2.5em;
+    text-transform: uppercase;
+    color: var(--light);
+    margin-top: 100px;
+}
+#box-content-item-form div {
+    width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--cyan);
+    height: 80px;
+    margin: 40px;
+    text-align: center;
+    font-size: 1.5em;
+    color: var(--light);
+    border-radius: 10px;
+    background: url(/img/1.gif);
+    filter: drop-shadow(4px 4px 1px var(--indigo));
+    cursor: pointer;
+    
+}
+#box-content-item-form div:hover {
+    background: url(/img/2.gif);
+}
+#box-content-item-form {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+
+}
+#description {
+    width: 60%;
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px;
+    filter: drop-shadow(2px 2px 20px var(--indigo));
+    color: var(--cyan);
+    font-size: 1.4em;
+}
+#box-btn-form {
+    margin-top: 60px;
+}
+#box-btn-form button{
+    border: 1px solid var(--light);
+    width: 200px;
+    height: 80px;
+    background-color: var(--cyan);
+}
+
+*/
+/* Seção de patrocinadores*/
+
+
+
+#container-patrocinadores {
+    width: 100vw; /*Largura total para seção de patrocinadores*/
+    height: 60vh; /*altura máxima para seção de patrocinadores*/
+    margin-top: 30vh; /*margem da seção patrocinadores relacionada ao elemento do topo*/
+    display: flex; /* Define o elemento como um contêiner flexível, permitindo o uso das propriedades de layout flexível */
+    flex-direction: row; /* Alinha os itens no contêiner em uma única linha horizontal */
+    justify-content: space-around; /* Distribui o espaço restante ao redor dos itens, com espaço igual entre os itens e as bordas do contêiner */
+    align-items: center; /* Centraliza os itens verticalmente ao longo do eixo transversal do contêiner */
+    flex-wrap: wrap; /* Permite que os itens se movam para a linha seguinte se não couberem na linha atual */
+    padding: 0 10vw 0 10vw; /* Adiciona um preenchimento de 10% da largura da viewport à esquerda e à direita do contêiner (não adiciona preenchimento superior ou inferior) */
+}
+/* Estilo específico para o logo com a classe logoA */
+.logoA {
+    width: 300px; /* Define a largura do elemento com a classe logoA como 300 pixels */
+}
+
+/* Estilo específico para o logo com a classe logoB */
+.logoB {
+    width: 300px; /* Define a largura do elemento com a classe logoB como 300 pixels */
+}
+
+/* Estilo específico para o logo com a classe logoC */
+.logoC {
+    width: 254px; /* Define a largura do elemento com a classe logoC como 280 pixels */
+    height: 70px; /* Define a altura do elemento com a classe logoC como 150 pixels */
+}
+
+/* Estilo específico para o logo com a classe logoD */
+.logoD {
+    width: 200px; /* Define a largura do elemento com a classe logoD como 200 pixels */
+}
+
+/* Estilo específico para o logo com a classe logoE */
+.logoE {
+    width: 300px; /* Define a largura do elemento com a classe logoE como 300 pixels */
+}
+
+
+/* Seção de rodapé da página*/
+
+footer {
+    width: 100vw; /* Define a largura do rodapé para 100% da largura da viewport (visão da tela), ocupando toda a largura disponível */
+    height: 30vh; /* Define a altura do rodapé para 30% da altura da viewport (visão da tela), permitindo uma altura proporcional à altura da tela */
+    margin-top: 20vh; /* Adiciona uma margem superior de 20% da altura da viewport, criando um espaço acima do rodapé em relação ao elemento acima */
+    background-color: rgba(4, 18, 31, 0.452); /* Define a cor de fundo do rodapé com uma cor escura e opacidade de aproximadamente 45% (rgba é um formato de cor com alpha) */
+    overflow-y: hidden; /* Esconde qualquer conteúdo que exceda a altura do rodapé na direção vertical, evitando barras de rolagem verticais */
+    color: var(--light); /* Define a cor do texto usando uma variável CSS chamada `--light` que deve estar definida em algum lugar do seu CSS */
+    display: flex; /* Define o rodapé como um contêiner flexível, permitindo a utilização de propriedades de layout flexível para alinhar e distribuir os itens internos */
+    flex-direction: row; /* Alinha os itens do rodapé em uma linha horizontal */
+    justify-content: space-around; /* Distribui o espaço restante ao redor dos itens, criando espaçamento igual entre eles e nas bordas do rodapé */
+    align-items: center; /* Alinha os itens verticalmente ao centro do rodapé */
+    flex-wrap: wrap; /* Permite que os itens dentro do rodapé se movam para a linha seguinte se não houver espaço suficiente na linha atual */
+    font-size: 1.2em; /* Define o tamanho da fonte dos itens dentro do rodapé como 1.2 vezes o tamanho da fonte padrão do documento */
+}
+
+/* Estilos para a seção de copyright no rodapé */
+.footer-copyright {
+    width: 100%; /* Define a largura da seção de copyright como 100% da largura do rodapé, fazendo com que ocupe toda a largura disponível */
+    align-items: center; /* Alinha os itens verticalmente ao centro, embora esta propriedade não tenha efeito aqui porque não há layout flexível aplicável dentro dessa classe */
+    text-align: center; /* Centraliza o texto horizontalmente dentro da seção de copyright */
+    font-size: 1em; /* Define o tamanho da fonte do texto de copyright como o tamanho da fonte padrão do documento */
+}
+
+/* Estilos para a seção de contato no rodapé */
+.footer-contact {
+    width: 40%; /* Define a largura da seção de contato como 40% da largura do rodapé */
+}
+
+/* Estilos para a seção de redes sociais no rodapé */
+.footer-social {
+    width: 40%; /* Define a largura da seção de redes sociais como 40% da largura do rodapé */
+    padding: 40px; /* Adiciona um preenchimento interno de 40 pixels ao redor do conteúdo da seção de redes sociais */
+}
+
+/* Estilos para os ícones dentro da seção de redes sociais */
+.icon-img {
+    width: 30px; /* Define a largura dos ícones como 30 pixels */
+    margin-left: 20px; /* Adiciona uma margem à esquerda dos ícones de 20 pixels, criando espaçamento entre ícones adjacentes */
+}
+
+
+.up-btn {
+    display: none; /* Inicialmente oculto */
+    position: fixed; /*Define elemento como fixo no scroll*/
+    bottom: 20px; /*posição relacionado à página*/
+    right: 20px; /*posição relacionado à página*/
+    border: none; /*remove a borda padrão*/
+    border-radius: 5px; /*arredondamento da borda*/
+    padding: 10px 20px; /*espaço interno do elemento */
+    cursor: pointer; /*define ponteiro do mouse */
+    width: 100px; /*largunra máxima de elemento*/
+    z-index:1;
+}
+
+.up-btn:hover {
+    background-color: #00000081; /*cor de fundo para elemento ao passar com mouse*/
+}
+
+
+
+/* Responsividade */
+@media (max-width: 768px) {
+    #img-title-principal {
+        width: 163vw; /* Ajusta a largura da imagem do título em dispositivos menores */
+        margin-left: 1vh;
+    }
+    .navbar-nav {
+        background: linear-gradient(0deg, rgba(0,0,0,1) 37%, rgba(1,1,55,1) 90%, rgba(30,5,52,1) 100%) no-repeat; /* Aplica o gradiente de fundo na navbar em dispositivos menores */
+        text-align: center; /* Centraliza o texto na navbar */
+        height: 100vh; /* Define a altura da navbar como 100% da altura da viewport */
+        width: 100vw; /* Define a largura da navbar como 100% da largura da viewport */
+        align-items: center; /* Centraliza verticalmente o conteúdo da navbar */
+        display: flex; /* Usa flexbox para o layout da navbar */
+        justify-content: center; /* Centraliza horizontalmente o conteúdo da navbar */
+        margin-left: -20px; /* Ajusta a margem à esquerda da navbar */
+        
+    }
+    #main-content {
+        height: 100vh;
+        margin-top: -50px; /* Ajusta a margem superior do conteúdo principal em dispositivos menores */
+    }
+    #text-principal {
+        width: 80%;
+        top: 40vh; /* Ajusta a posição vertical do texto principal em dispositivos menores */
+    }
+    #about-us-section {
+        height: 100vh;
+    }
+    #about-us-section p {
+        font-size: 1.2em; /* Ajusta o tamanho da fonte do parágrafo em dispositivos menores */
+        line-height: 25px; /* Define a altura da linha do parágrafo */
+        margin-top: -10vh;
+    }
+    #about-us-section h1 {
+        margin-top: -10vh;
+    }
+    #scroll-button {
+        top: 65vh; /* Ajusta a posição vertical do botão de rolar em dispositivos menores */
+    }
+    #about-us-section {
+        height: 110vh; /*altera altura máxima de elemento*/
+    }
+    .meteor-none{
+        display: none; /*Desabilita elemento em telas pequenas*/
+    }
+    .table-box {
+        width: 100vw; /*define largura máxima para caixa*/
+    }
+    .img-2 {
+        display: none;  /*Desabilita elemento em telas pequenas*/
+        
+    }
+    .planet-blue {
+        display: none;  /*Desabilita elemento em telas pequenas*/
+    }
+    .up-btn {
+        top: 75vh; /*Altera altura de elemento para telas menores*/
+        right: -4vw; /*Muda posicionamento de elemento em telas menores */
+    }
+    .planet {
+        width: 10vw; 
+        top: 29vh;
+        left: 14vw;
+    }
+    
+    #container-table {
+        height: 100vh;
+        margin: 30vh 0 30vh 0; /*define espaçamento externo de elemento em telas menores*/
+    }
+    .img-btn-scroll {
+        width: 18vw; /* Define a largura da imagem com a classe .img-btn-scroll como 18% da largura da viewport. */
+    }
+    
+    .logo {
+        width: 10vw; /* Define a largura da imagem com a classe .logo como 10% da largura da viewport. */
+    }
+    
+    #form-section {
+        height: 100vh;
+        display: none; /* Oculta o elemento com o ID #form-section, não o exibindo na página. */
+    }
+    
+    #form-secondary form {
+        flex-wrap: wrap; /* Permite que os itens flexíveis dentro do formulário se movam para a linha seguinte se não houver espaço suficiente na linha atual. */
+        height: 140vh; /* Define a altura do formulário como 1000 pixels. */
+
+    }
+    
+    #box-one-form {
+        width: 100%; /* Define a largura do elemento com o ID #box-one-form como 100% da largura do elemento pai (#form-secondary). */
+    }
+    
+    #box-two-form {
+        width: 100%; /* Define a largura do elemento com o ID #box-two-form como 100% da largura do elemento pai (#form-secondary). */
+    }
+    
+    form button {
+        margin: 0; /* Remove a margem padrão ao redor dos botões dentro de um formulário. */
+    }
+    
+    #container-patrocinadores {
+        height: 100vh; /* Define a altura do elemento para 100% da altura da viewport (tela). */
+        margin: 75vh 0 0; /* Define a margem superior como 75% da altura da viewport, com margens laterais e inferior de 0. */
+    }
+    
+    .min {
+        width: 60vw; /* Define a largura do elemento como 60% da largura da viewport. */
+        margin: 2vh; /* Define o preenchimento interno do elemento como 15 pixels em todos os lados. */
+    }
+    
+    .logoA {
+        width: 60vw; /* Define a largura do elemento como 60% da largura da viewport. */
+    }
+    
+    .logoB {
+        width: 60vw; /* Define a largura do elemento como 60% da largura da viewport. */
+        margin-top: -4vh;
+    }
+    
+    .logoC {
+        width: 60vw; /* Define a largura do elemento como 60% da largura da viewport. */
+        height: 17vw;
+        margin-bottom: 2vh;
+    }
+    
+    .logoD {
+        width: 40vw; /* Define a largura do elemento como 50% da largura da viewport. */
+        margin-bottom: -5vh;
+    }
+    
+    footer {
+        overflow-y: hidden; /* Oculta o conteúdo que excede a altura do elemento no eixo vertical. */
+        font-size: 0.9em; /* Define o tamanho da fonte como 90% do tamanho da fonte do elemento pai. */
+        height: auto; /* Define a altura do elemento como automática, ajustando-se ao conteúdo. */
+        padding: 20px;
+    }
+    
+    body {
+        display: flex; /* Define o display do corpo como flexível para usar o modelo de layout flex. */
+        flex-direction: column; /* Alinha os itens flexíveis em uma coluna (verticalmente). */
+        flex-wrap: wrap; /* Permite que os itens flexíveis que não cabem em uma linha sejam movidos para a próxima linha. */
+    }
+    
+    .footer-social {
+        display: flex; /* Define o display da classe como flexível. */
+        flex-direction: column; /* Alinha os itens flexíveis em uma coluna (verticalmente). */
+        justify-content: space-around; /* Distribui os itens ao longo do eixo principal com espaço igual ao redor. */
+        gap: 20px; /* Define um espaço de 20 pixels entre os itens flexíveis. */
+    }
+    
+    .navbar-collapse {
+        position: absolute; /* Define a posição do elemento como absoluta em relação ao elemento pai. */
+        top: 0; /* Define a posição do topo do elemento como 0 pixels do topo do elemento pai. */
+        left: 0; /* Define a posição da esquerda do elemento como 0 pixels da borda esquerda do elemento pai. */
+        width: 100vw; /* Garante que a navbar colha toda a largura da tela */
+        background-color: #343a40; /* Cor de fundo da navbar */
+        z-index: 9999; 
+        overflow-y: auto; /* Adiciona rolagem se o conteúdo exceder a altura da tela */
+    }
+
+    .navbar-toggler {
+        position: relative; /* Garante que o botão de alternar não seja coberto pelo conteúdo */
+        z-index: 10000; /* Garante que o botão esteja sobre a navbar */
+    }
+    
+} 
+    
+    

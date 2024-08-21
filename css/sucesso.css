@@ -1,0 +1,111 @@
+/* Reseta margens, preenchimentos e define box-sizing para border-box em todos os elementos */
+* {
+    margin: 0; /* Remove a margem padrão */
+    padding: 0; /* Remove o preenchimento padrão */
+    box-sizing: border-box; /* Inclui bordas e preenchimento no tamanho total do elemento */
+}
+
+/* Define o estilo para o corpo da página */
+body {
+    background: linear-gradient(0deg, rgba(0,0,0,1) 37%, rgba(1,1,55,1) 90%, rgba(30,5,52,1) 100%) no-repeat; /* Aplica um gradiente de fundo que vai do preto ao azul-escuro */
+    font-family: "Pixelify Sans", sans-serif; /* Define a fonte padrão para o corpo usando a fonte Pixelify Sans */
+}
+
+/* Define variáveis de cores para serem usadas em todo o CSS */
+:root {
+    --blue: #007bff; /* Azul primário */
+    --indigo: #6610f2; /* Índigo */
+    --purple: #6f42c1; /* Roxo */
+    --pink: #e83e8c; /* Rosa */
+    --red: #dc3545; /* Vermelho */
+    --orange: #fd7e14; /* Laranja */
+    --yellow: #ffc107; /* Amarelo */
+    --green: #28a745; /* Verde */
+    --teal: #20c997; /* Verde-azulado */
+    --cyan: #17a2b8; /* Ciano */
+    --white: #fff; /* Branco */
+    --gray: #6c757d; /* Cinza */
+    --gray-dark: #343a40; /* Cinza escuro */
+    --primary: #007bff; /* Cor primária (azul) */
+    --secondary: #6c757d; /* Cor secundária (cinza) */
+    --success: #28a745; /* Cor de sucesso (verde) */
+    --info: #17a2b8; /* Cor de informação (ciano) */
+    --warning: #ffc107; /* Cor de aviso (amarelo) */
+    --danger: #dc3545; /* Cor de perigo (vermelho) */
+    --light: #f8f9fa; /* Cor clara (cinza claro) */
+    --dark: #343a40; /* Cor escura (cinza escuro) */
+}
+
+/* Define o estilo para todos os elementos div */
+div {
+    width: 100vw; /* Define a largura da div como 100% da largura da viewport */
+    display: flex; /* Usa o layout flexível */
+    height: 100vh; /* Define a altura da div como 100% da altura da viewport */
+    position: relative; /* Define a posição como relativa para permitir o posicionamento absoluto de filhos */
+    overflow-y: hidden; /* Oculta o overflow vertical */
+    justify-content: center; /* Centraliza o conteúdo horizontalmente */
+    align-items: center; /* Centraliza o conteúdo verticalmente */
+    flex-direction: column; /* Organiza os itens em coluna */
+}
+
+/* Define o estilo para o elemento span */
+span {
+    color: var(--light); /* Define a cor do texto usando a variável de cor 'light' */
+    font-size: 2em; /* Define o tamanho da fonte como 2 vezes o tamanho base */
+    text-transform: uppercase; /* Converte o texto para maiúsculas */
+    position: absolute; /* Posiciona o elemento absolutamente dentro do contêiner pai */
+    top: 30vh; /* Posiciona o topo do elemento a 30% da altura da viewport */
+}
+
+/* Define o estilo para os links */
+a {
+    text-decoration: none; /* Remove a sublinha do link */
+    color: var(--indigo); /* Define a cor do texto do link usando a variável de cor 'indigo' */
+    font-size: 1.2em; /* Define o tamanho da fonte como 1.2 vezes o tamanho base */
+}
+
+/* Define o estilo para a imagem com a classe 'galaxy' */
+.galaxy {
+    width: 180vw; /* Define a largura da imagem como 180% da largura da viewport */
+    position: absolute; /* Posiciona a imagem absolutamente dentro do contêiner pai */
+    top: -30vh; /* Posiciona o topo da imagem 30% acima da altura da viewport */
+    left: -10vw; /* Posiciona a imagem 10% à esquerda da largura da viewport */
+    opacity: 0.8; /* Define a opacidade da imagem como 80% */
+    z-index: -1; /* Coloca a imagem atrás de outros elementos */
+}
+
+/* Define o estilo para a imagem com a classe 'logo' */
+.logo {
+    width: 80px; /* Define a largura da imagem como 80 pixels */
+    position: absolute; /* Posiciona a imagem absolutamente dentro do contêiner pai */
+    top: 5vh; /* Posiciona o topo da imagem a 5% da altura da viewport */
+}
+
+/* Define o estilo para o contêiner de estrelas */
+#star-field {
+    position: absolute; /* Posiciona o contêiner absolutamente dentro do contêiner pai */
+    width: 100%; /* Define a largura como 100% do contêiner pai */
+    height: 100%; /* Define a altura como 100% do contêiner pai */
+    overflow: hidden; /* Oculta o overflow do contêiner */
+}
+
+/* Define o estilo para as estrelas */
+.star {
+    position: absolute; /* Posiciona a estrela absolutamente dentro do contêiner pai */
+    width: 2px; /* Define a largura da estrela como 2 pixels */
+    height: 2px; /* Define a altura da estrela como 2 pixels */
+    background: white; /* Define a cor de fundo da estrela como branca */
+    border-radius: 50%; /* Torna a estrela circular */
+    opacity: 0; /* Define a opacidade inicial como 0 (invisível) */
+    animation: piscar 1.5s infinite; /* Aplica a animação 'piscar' à estrela com duração de 1.5 segundos e repetição infinita */
+}
+
+/* Define a animação 'piscar' para as estrelas */
+@keyframes piscar {
+    0%, 100% {
+        opacity: 0; /* Define a opacidade como 0 no início e no fim da animação */
+    }
+    50% {
+        opacity: 1; /* Define a opacidade como 1 no meio da animação */
+    }
+}
